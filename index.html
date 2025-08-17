@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>[Your Names] — Wedding</title>
-  <meta name="description" content="Wedding details and RSVP." />
+  <title>Jenn & Tobi</title>
+  <meta name="description" content="Wedding details" />
   <meta name="robots" content="noindex,nofollow" />
   <style>
     :root{
-      --bg:#000;
-      --fg:#e5e7eb; /* slate-200 */
-      --muted:#9ca3af; /* gray-400 */
+      --bg:#001;
+      --fg:#a3a3a3; /* neutral-400 */
+      --muted:#a6a3a3; /* neutral-500 */
       --accent:#ffffff; /* for borders */
       --max:1100px;
       --radius:16px;
@@ -23,11 +23,23 @@
 
     /* HERO */
     .hero{position:relative;height:100svh;min-height:520px;display:grid;place-items:center;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:url('images/image1.jpg') center/cover no-repeat;filter:contrast(1.05) saturate(1.05)}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.65))}
+    .hero::before{content:"";position:absolute;inset:0;background:url('images/image1.jpg') center/cover no-repeat;filter:contrast(.90) saturate(1.0);  background-attachment: fixed;}
+    .hero::after{content:"";position:absolute;inset:0;}
     .hero-inner{position:relative;text-align:center;padding:0 16px}
+    .hero-inner {
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(1px);
+      padding: .5rem 1.5rem;   /* existing padding */
+      margin-top: 15vh;       /* 👈 shifts box ~15% down the viewport */
+      border-radius: 12px;
+      display: inline-block;
+    }
+
     .title{font-size:clamp(36px,7vw,72px);line-height:1.02;margin:0 0 8px}
     .subtitle{font-size:clamp(16px,2.6vw,22px);color:var(--muted);margin:0}
+    .title, .subtitle {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
     .scroll-indicator{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
 
     /* CONTENT */
@@ -63,8 +75,8 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-inner">
-      <h1 class="title">[Your Names]</h1>
-      <p class="subtitle">[City, Country] · <strong>[Saturday · 24 May 2026]</strong></p>
+      <h1 class="title">Wir haben geheiratet.</h1>
+      <p class="subtitle">1. August 2025, Bergbaumuseum Bochum</strong></p>
     </div>
     <div class="scroll-indicator">Scroll</div>
   </header>
@@ -74,8 +86,8 @@
     <div class="container">
       <div class="row reveal">
         <div class="card">
-          <h2>Welcome</h2>
-          <p>We’re so excited to celebrate with you. Below you’ll find details about the day, travel notes, and images. Swap in your own copy and photos; everything here is mobile‑first and intentionally minimal.</p>
+          <h2>Komm mit auf Flitterwochen!</h2>
+          <p>Nachdem wir unsere Liebe im Familienkreis vor dem deutschen Fiskus legalisiert haben und niemand teilhaben konnte, haben wir überlegt euch dafür an unserer Hochzeitsreise auf die Philippinen (inklusive freie Trauung am Strand, aber exklusive Hochzeitsnacht) teilhaben zu lassen. Vorweg: Es geht um eine Fernreise in die Tropen mit einem Flug der locker 24h lang sein kann. Die Reise ist lang, beschwerlich und teuer. Es wird von niemanden erwartet diese Strapazen auf sich zu nehmen. Solltet ihr aber Lust, Zeit und ein „bisschen Geld“ übrighaben, könnt ihr euch gerne anschließen.</p>
         </div>
         <div>
           <img src="images/image2.jpg" alt="Placeholder image 2" loading="lazy" />
@@ -90,9 +102,8 @@
           <img src="images/image3.jpg" alt="Placeholder image 3" loading="lazy" />
         </div>
         <div class="card">
-          <h2>When & Where</h2>
-          <p><strong>Ceremony</strong><br>[Venue] — [Address]<br>[14:00] (arrive by 13:30)</p>
-          <p><strong>Reception</strong><br>[Venue] — [Address]<br>[17:30] until late</p>
+          <h2>Grober Ablauf</h2>
+          <p>Wir teilen mit euch unsere gesamte Route. Jeder kann sich anschließen oder sich Teile heraussuchen und an disen teilhaben. Manche Leute reisen vielleicht das erste Mal soweit, wiederum andere wünschen sich mehr Privatsphäre und eine entspanntere Reise. Für 2 ½ Wochen ist das schon viel Wechsel \& Rumreisen. Wir sind eher so die Backpacker, auch noch mit Mitte 30. Jeder soll sich seinen Urlaub so gestalten, wie er möchte. Wenn ihr zur Trauung kommt, super ☺ Wir helfen gerne bei der Planung. Es gibt noch einige tolle andere Orte auf den Philippinen zu erkunden: Palawan, Coron, Boracay, Bohol, Banaue. Sprecht uns gerne an, falls ihr Input braucht.</p>
         </div>
       </div>
 
