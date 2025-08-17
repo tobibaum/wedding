@@ -24,6 +24,11 @@
     /* HERO */
     .hero{position:relative;height:100svh;min-height:520px;display:grid;place-items:center;overflow:hidden}
     .hero::before{content:"";position:absolute;inset:0;background:url('images/image1.jpg?v=2') center/cover no-repeat;filter:contrast(.90) saturate(1.0);  background-attachment: fixed;}
+    @supports (-webkit-touch-callout: none) {
+      .hero::before{
+        background-attachment: scroll;  /* <-- fixes “top row only” */
+      }
+    } 
     .hero::after{content:"";position:absolute;inset:0;}
     .hero-inner{position:relative;text-align:center;padding:0 16px}
     .hero-inner {
