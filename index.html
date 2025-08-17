@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[Your Names] — Wedding</title>
+  <meta name="description" content="Wedding details and RSVP." />
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root{
+      --bg:#000;
+      --fg:#e5e7eb; /* slate-200 */
+      --muted:#9ca3af; /* gray-400 */
+      --accent:#ffffff; /* for borders */
+      --max:1100px;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif}
+    img{display:block;max-width:100%;height:auto;border-radius:12px}
+    a{color:#fff;text-decoration-thickness:2px}
+    .container{max-width:var(--max);margin:0 auto;padding:20px}
+
+    /* HERO */
+    .hero{position:relative;height:100svh;min-height:520px;display:grid;place-items:center;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url('image1.jpg') center/cover no-repeat;filter:contrast(1.05) saturate(1.05)}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.65))}
+    .hero-inner{position:relative;text-align:center;padding:0 16px}
+    .title{font-size:clamp(36px,7vw,72px);line-height:1.02;margin:0 0 8px}
+    .subtitle{font-size:clamp(16px,2.6vw,22px);color:var(--muted);margin:0}
+    .scroll-indicator{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
+
+    /* CONTENT */
+    section{padding:48px 0}
+    h2{font-size:clamp(22px,3.2vw,30px);margin:0 0 10px}
+    p{line-height:1.65}
+
+    .grid{display:grid;gap:22px}
+    .row{display:grid;gap:22px;align-items:center}
+
+    /* two-column from 820px */
+    @media(min-width:820px){
+      .row{grid-template-columns:1.05fr .95fr}
+      .row.reverse{grid-template-columns:.95fr 1.05fr}
+    }
+
+    /* Cards & dividers */
+    .card{padding:22px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.0))}
+    .divider{height:1px;background:linear-gradient(to right,rgba(255,255,255,.04),rgba(255,255,255,.12),rgba(255,255,255,.04));margin:26px 0}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease, transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal{opacity:1;transform:none}
+      .scroll-indicator{display:none}
+      .hero::before{filter:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="title">[Your Names]</h1>
+      <p class="subtitle">[City, Country] · <strong>[Saturday · 24 May 2026]</strong></p>
+    </div>
+    <div class="scroll-indicator">Scroll</div>
+  </header>
+
+  <!-- SECTION: Intro text comes up from bottom on scroll -->
+  <section>
+    <div class="container">
+      <div class="row reveal">
+        <div class="card">
+          <h2>Welcome</h2>
+          <p>We’re so excited to celebrate with you. Below you’ll find details about the day, travel notes, and images. Swap in your own copy and photos; everything here is mobile‑first and intentionally minimal.</p>
+        </div>
+        <div>
+          <img src="image2.jpg" alt="Placeholder image 2" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Interleaved image/text blocks -->
+      <div class="row reverse reveal">
+        <div>
+          <img src="image3.jpg" alt="Placeholder image 3" loading="lazy" />
+        </div>
+        <div class="card">
+          <h2>When & Where</h2>
+          <p><strong>Ceremony</strong><br>[Venue] — [Address]<br>[14:00] (arrive by 13:30)</p>
+          <p><strong>Reception</strong><br>[Venue] — [Address]<br>[17:30] until late</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row reveal">
+        <div class="card">
+          <h2>Schedule</h2>
+          <p>13:30 Arrival & seating<br>14:00 Ceremony<br>15:00 Photos & drinks<br>17:30 Dinner<br>20:00 First dance</p>
+        </div>
+        <div>
+          <img src="image4.jpg" alt="Placeholder image 4" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row reverse reveal">
+        <div>
+          <img src="image5.jpg" alt="Placeholder image 5" loading="lazy" />
+        </div>
+        <div class="card">
+          <h2>Travel & Stay</h2>
+          <p>Closest airports: [MUC/FRA/BER]. Trains to [City] run frequently. We recommend hotels [A] and [B].</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row reveal">
+        <div class="card">
+          <h2>RSVP</h2>
+          <p>Embed your Google Form here or link to it. Keep it simple and private as you prefer.</p>
+          <p><a href="#" aria-disabled="true">RSVP (coming soon)</a></p>
+        </div>
+        <div>
+          <img src="image6.jpg" alt="Placeholder image 6" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container" style="padding-bottom:64px">
+    <p style="color:var(--muted)">© [Year] [Your Names]</p>
+  </footer>
+
+  <script>
+    // Reveal-on-scroll using IntersectionObserver
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+    },{root:null,rootMargin:'0px 0px -10% 0px',threshold:0.15});
+    els.forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
+
